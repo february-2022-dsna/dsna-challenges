@@ -61,6 +61,8 @@ function shift(arr) {
   return firstItem;
 }
 
+// TIME COMPLEXITY - O(n) -- removing requires shifting items to the left by one
+
 test('removes first item in array, return removed item', () => {
   const arr = ['a', 'b', 'c'];
   const removedItem = shift(arr);

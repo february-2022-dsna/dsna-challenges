@@ -7,7 +7,7 @@ function multiplesOfN(n, max = 50) {
   return numbers;
 }
 
-test('multiples of n', () => {
+test.skip('multiples of n', () => {
   expect(multiplesOfN(5)).toEqual([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 });
 
@@ -27,7 +27,7 @@ function fizzBuzz(number) {
   return list;
 }
 
-test('returns fizz and buzz as multiples of 3 and 5', () => {
+test.skip('returns fizz and buzz as multiples of 3 and 5', () => {
   expect(fizzBuzz()).toEqual[
     (1,
     2,

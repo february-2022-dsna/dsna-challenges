@@ -1,4 +1,4 @@
-test('object keys', () => {
+test.skip('object keys', () => {
   const pet = {
     ['name']: 'max',
     ['type']: 'cat',
@@ -38,7 +38,7 @@ test('object keys', () => {
   });
 });
 
-test('dynamic object properties', () => {
+test.skip('dynamic object properties', () => {
   const pet = {
     name: 'felix',
     lives: 9,
@@ -50,7 +50,7 @@ test('dynamic object properties', () => {
   expect(pet[prop]).toBe(8);
 });
 
-test('lookup or map', () => {
+test.skip('lookup or map', () => {
   const cats = [
     (felix = { name: 'felix', lives: 8 }),
     (midnight = { name: 'midnight', lives: 4 }),
@@ -73,7 +73,7 @@ function inventoryChecker(inventory, { itemName }) {
     ? 'plenty of inventory'
     : `running low on ${itemName}`;
 }
-test('inventory checker', () => {
+test.skip('inventory checker', () => {
   const inventory = {
     eggs: 20,
     bananas: 4,

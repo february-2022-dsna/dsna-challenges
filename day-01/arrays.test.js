@@ -6,7 +6,7 @@ function pusharr(arr, item) {
 
 test('array push', () => {
   const arr = ['a', 'b', 'c'];
-  const newLength = push(arr, 'd');
+  const newLength = pusharr(arr, 'd');
   expect(arr).toEqual(['a', 'b', 'c', 'd']);
   expect(newLength).toBe(4);
 });

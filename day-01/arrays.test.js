@@ -81,6 +81,8 @@ function hasDuplicates(arr) {
   return false;
 }
 
+// TIME COMPLEXITY - O(n^2) -- searching through array twice
+
 test.only('returns true if array has duplicates, false if no duplicates', () => {
   const firstArr = ['j', 'o', 'w', 'w'];
   const hasDuplicatesOne = hasDuplicates(firstArr);

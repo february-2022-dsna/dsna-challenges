@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "jest": "^28.1.3"
+  },
+  "name": "dsna-challenges-advfullstack",
+  "description": "Repository for code challenges",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belliott15/dsna-challenges-advFullStack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belliott15/dsna-challenges-advFullStack/issues"
+  },
+  "homepage": "https://github.com/belliott15/dsna-challenges-advFullStack#readme",
+  "keywords": []
+}

@@ -76,6 +76,8 @@ function anagrams(wordOne, wordTwo) {
   return wordOneSorted === wordTwoSorted ? true : false;
 }
 
+// TIME COMPLEXITY - O(n + m)
+
 test.only('returns true if anagram(same letters) or false', () => {
   const outputOne = anagrams('superintended', 'unpredestined');
   expect(outputOne).toBe(true);

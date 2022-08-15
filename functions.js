@@ -32,8 +32,20 @@ function oddishOrEvenish(number) {
 function uniqueString(strings) {
   let newArr = strings.map(string => { return [...new Set(string.toLowerCase())].sort().join('') });
   for ( let i = 0; i < newArr.length; i++ ) {
-    if ( newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i]) ) return arr[i]
+    if ( newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i]) ) 
+    return strings[i]
   }
 }
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString };
+function titleCase(sentence) {
+  //first we want to break up each word into pieces
+  //then we want to target the first letter of each word and capitalize it
+  //then we want to join the words back together in the same string
+  return sentence
+    .split(" ")//split up the different words of the sentence
+    .map(word => word.slice(0, 1)//map each word and target the first letter
+      .toUpperCase() + word.slice(1).toLowerCase()) //capitalize the first letter and add it to the rest of the word lowercase
+    .join(" ");//join the sentence back together
+}
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase };

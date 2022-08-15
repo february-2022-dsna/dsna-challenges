@@ -29,4 +29,11 @@ function oddishOrEvenish(number) {
     }
   }
 
-module.exports = { anagrams, oddishOrEvenish };
+function uniqueString(strings) {
+  let newArr = strings.map(string => { return [...new Set(string.toLowerCase())].sort().join('') });
+  for ( let i = 0; i < newArr.length; i++ ) {
+    if ( newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i]) ) return arr[i]
+  }
+}
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString };

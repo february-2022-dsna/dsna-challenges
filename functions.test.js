@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -12,5 +12,11 @@ describe("oddishOrEvenish", () => {
     expect(oddishOrEvenish(121)).toBe("Evenish");
     expect(oddishOrEvenish(41)).toBe("Oddish");
     expect(oddishOrEvenish(12421)).toBe("Evenish");
+  });
+});
+
+describe("uniqueString", () => {
+  it("should return the odd man out", () => {
+    expect(uniqueString([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])).toBe("BbBb");
   });
 });

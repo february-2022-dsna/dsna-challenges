@@ -67,3 +67,18 @@ test('fizzbuzz func', () => {
     16,
   ]);
 });
+
+// ------------------------------ ANAGRAM -----------------
+
+function anagrams(wordOne, wordTwo) {
+  const wordOneSorted = wordOne.split('').sort().join('');
+  const wordTwoSorted = wordTwo.split('').sort().join('');
+  return wordOneSorted === wordTwoSorted ? true : false;
+}
+
+test.only('returns true if anagram(same letters) or false', () => {
+  const outputOne = anagrams('superintended', 'unpredestined');
+  expect(outputOne).toBe(true);
+  const outputTwo = anagrams('pictorialness', 'documentarily');
+  expect(outputTwo).toBe(false);
+});

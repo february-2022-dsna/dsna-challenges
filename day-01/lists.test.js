@@ -103,3 +103,40 @@ test('returns true if anagram(same letters) or false', () => {
   const outputTwo = anagrams('pictorialness', 'documentarily');
   expect(outputTwo).toBe(false);
 });
+
+// ------------------------------ 5 - UNIQUE STRINGS -----------------
+
+function uniqueString(strings) {
+  let newArr = arr.map((a) => {
+    return [...new Set(a.toLowerCase())].sort().join('');
+  });
+
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i])) {
+      return arr[i];
+    }
+  }
+}
+
+test('unique string', () => {
+  const outputOne = uniqueString([
+    'Aa',
+    'aaa',
+    'aaaaa',
+    'BbBb',
+    'Aaaa',
+    'AaAaAa',
+    'a',
+  ]);
+  expect(outputOne).toBe('BbBb');
+  const outputTwo = uniqueString([
+    'abc',
+    'acb',
+    'bac',
+    'foo',
+    'bca',
+    'cab',
+    'cba',
+  ]);
+  expect(outputTwo).toBe('foo');
+});

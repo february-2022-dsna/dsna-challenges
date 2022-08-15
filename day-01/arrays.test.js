@@ -69,3 +69,23 @@ test('removes first item in array, return removed item', () => {
   expect(arr).toEqual(['b', 'c']);
   expect(removedItem).toBe('a');
 });
+
+// ------------------------------ HASDUPLICATES -----------------
+
+function hasDuplicates(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) return true;
+    }
+  }
+  return false;
+}
+
+test.only('returns true if array has duplicates, false if no duplicates', () => {
+  const firstArr = ['j', 'o', 'w', 'w'];
+  const hasDuplicatesOne = hasDuplicates(firstArr);
+  const secondArr = ['m', 'b', 'p', 'x'];
+  const hasDuplicatesTwo = hasDuplicates(secondArr);
+  expect(hasDuplicatesOne).toBe(true);
+  expect(hasDuplicatesTwo).toBe(false);
+});

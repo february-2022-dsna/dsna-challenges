@@ -1,0 +1,23 @@
+{
+  "name": "dsna-challenges",
+  "version": "1.0.0",
+  "description": "Repository for code challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElliottProductions/dsna-challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElliottProductions/dsna-challenges/issues"
+  },
+  "homepage": "https://github.com/ElliottProductions/dsna-challenges#readme",
+  "keywords": [],
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}

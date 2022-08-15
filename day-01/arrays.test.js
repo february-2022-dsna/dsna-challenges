@@ -1,3 +1,5 @@
+// ------------------------------ PUSH -----------------
+
 function push(arr, item) {
   arr[arr.length] = item;
   return arr.length;
@@ -12,7 +14,7 @@ test('add item to end of array', () => {
   expect(newLength).toBe(4);
 });
 
-// ------------------------------
+// ------------------------------ UNSHIFT -----------------
 
 function unshift(arr, item) {
   for (let i = arr.length; i > 0; i--) {
@@ -31,4 +33,19 @@ test('adjust items in array to make room and add item to beginning of array', ()
   expect(newLength).toBe(4);
 });
 
-// ------------------------------
+// ------------------------------ POP -----------------
+
+function pop(arr) {
+  const last = arr[arr.length - 1];
+  arr.length = arr.length - 1;
+  return last;
+}
+
+// TIME COMPLEXITY - O(1) -- removing at the end does not require other elements to be shifted
+
+test('remove last item from array, return removed item', () => {
+  const arr = ['a', 'b', 'c'];
+  const newLength = pop(arr, 'c');
+  expect(arr).toEqual(['a', 'b']);
+  expect(newLength).toBe(2);
+});

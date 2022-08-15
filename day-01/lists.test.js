@@ -28,6 +28,23 @@ test('takes sentence and returns same sentence with first letter of each word ca
   expect(output).toEqual('Alchemy Rocks Gold');
 });
 
+// ------------------------------ ODDISH/EVENISH -----------------
+
+function oddishOrEvenish(number) {
+  const splitNumbers = number.split('');
+  const sum = splitNumbers.reduce((prev, currentValue) => {
+    return (prev += Number(currentValue));
+  }, 0);
+  return sum % 2 === 0 ? 'Evenish' : 'Oddish';
+}
+
+test.only('is a number oddish(sum of all its digits is odd) or evenish(sum of all its digits is even)', () => {
+  const outputOne = oddishOrEvenish('121');
+  expect(outputOne).toEqual('Evenish');
+  const outputTwo = oddishOrEvenish('41');
+  expect(outputTwo).toEqual('Oddish');
+});
+
 // ------------------------------ FIZZBUZZ -----------------
 
 function fizzBuzz(number) {
@@ -76,9 +93,9 @@ function anagrams(wordOne, wordTwo) {
   return wordOneSorted === wordTwoSorted ? true : false;
 }
 
-// TIME COMPLEXITY - O(n + m)
+// TIME COMPLEXITY - O(n + m) - ?
 
-test.only('returns true if anagram(same letters) or false', () => {
+test('returns true if anagram(same letters) or false', () => {
   const outputOne = anagrams('superintended', 'unpredestined');
   expect(outputOne).toBe(true);
   const outputTwo = anagrams('pictorialness', 'documentarily');

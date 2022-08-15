@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -18,5 +18,11 @@ describe("oddishOrEvenish", () => {
 describe("uniqueString", () => {
   it("should return the odd man out", () => {
     expect(uniqueString([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])).toBe("BbBb");
+  });
+});
+
+describe("titleCase", () => {
+  it("should return the sentence capitalizing all the first letters", () => {
+    expect(titleCase("alchemy ROCKS goLD")).toBe("Alchemy Rocks Gold");
   });
 });

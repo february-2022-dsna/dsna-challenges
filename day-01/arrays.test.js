@@ -14,6 +14,23 @@ test('add item to end of array', () => {
   expect(newLength).toBe(4);
 });
 
+// ------------------------------ POP -----------------
+
+function pop(arr) {
+  const last = arr[arr.length - 1];
+  arr.length = arr.length - 1;
+  return last;
+}
+
+// TIME COMPLEXITY - O(1) -- removing at the end does not require other elements to be shifted
+
+test('remove last item from array, return removed item', () => {
+  const arr = ['a', 'b', 'c'];
+  const removedItem = pop(arr);
+  expect(arr).toEqual(['a', 'b']);
+  expect(removedItem).toBe('c');
+});
+
 // ------------------------------ UNSHIFT -----------------
 
 function unshift(arr, item) {
@@ -33,19 +50,20 @@ test('adjust items in array to make room and add item to beginning of array', ()
   expect(newLength).toBe(4);
 });
 
-// ------------------------------ POP -----------------
+// ------------------------------ SHIFT -----------------
 
-function pop(arr) {
-  const last = arr[arr.length - 1];
+function shift(arr) {
+  const first = arr[0];
+  for (let i = 0; i < arr.length - 1; i++) {
+    arr[i] = arr[i + 1];
+  }
   arr.length = arr.length - 1;
-  return last;
+  return first;
 }
 
-// TIME COMPLEXITY - O(1) -- removing at the end does not require other elements to be shifted
-
-test('remove last item from array, return removed item', () => {
+test('removes first item in array, return removed item', () => {
   const arr = ['a', 'b', 'c'];
-  const newLength = pop(arr, 'c');
-  expect(arr).toEqual(['a', 'b']);
-  expect(newLength).toBe(2);
+  const removedItem = shift(arr);
+  expect(arr).toEqual(['b', 'c']);
+  expect(removedItem).toBe('a');
 });

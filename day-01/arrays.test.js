@@ -12,6 +12,8 @@ test("push array", () => {
   expect(newLength).toBe(4);
 });
 
+// ------------------------------
+
 function unshift(arr, item) {
   for (let i = arr.length; i > 0; i--) {
     arr[i] = arr[i - 1];
@@ -27,4 +29,15 @@ test("unshift array", () => {
   const newLength = unshift(arr, "d");
   expect(arr).toEqual(["d", "a", "b", "c"]);
   expect(newLength).toBe(4);
+});
+
+// ------------------------------
+
+function pop(arr) {}
+
+test("pop array", () => {
+  const arr = ["a", "b", "c"];
+  const newLength = pop(arr, "c");
+  expect(arr).toEqual(["a", "b"]);
+  expect(newLength).toBe(2);
 });

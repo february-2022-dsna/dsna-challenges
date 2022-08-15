@@ -37,3 +37,14 @@ test('fizzbuzz func', () => {
     16,
   ]);
 });
+
+// ------------------------------ REVERSE SENTENCE WORDS -----------------
+
+function reverseWords(sentence) {
+  return sentence.split('').reverse().join('').split(' ').reverse().join(' ');
+}
+
+test('reverse each word in a sentence', () => {
+  const output = reverseWords('alchemy rocks gold');
+  expect(output).toEqual('ymehcla skcor dlog');
+});

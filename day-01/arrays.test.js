@@ -17,9 +17,9 @@ test('add item to end of array', () => {
 // ------------------------------ POP -----------------
 
 function pop(arr) {
-  const last = arr[arr.length - 1];
+  const lastItem = arr[arr.length - 1];
   arr.length = arr.length - 1;
-  return last;
+  return lastItem;
 }
 
 // TIME COMPLEXITY - O(1) -- removing at the end does not require other elements to be shifted
@@ -53,12 +53,12 @@ test('adjust items in array to make room and add item to beginning of array', ()
 // ------------------------------ SHIFT -----------------
 
 function shift(arr) {
-  const first = arr[0];
+  const firstItem = arr[0];
   for (let i = 0; i < arr.length - 1; i++) {
     arr[i] = arr[i + 1];
   }
   arr.length = arr.length - 1;
-  return first;
+  return firstItem;
 }
 
 test('removes first item in array, return removed item', () => {

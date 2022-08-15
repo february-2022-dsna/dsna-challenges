@@ -32,12 +32,3 @@ test("unshift array", () => {
 });
 
 // ------------------------------
-
-function pop(arr) {}
-
-test("pop array", () => {
-  const arr = ["a", "b", "c"];
-  const newLength = pop(arr, "c");
-  expect(arr).toEqual(["a", "b"]);
-  expect(newLength).toBe(2);
-});

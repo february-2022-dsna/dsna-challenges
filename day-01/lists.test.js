@@ -61,6 +61,8 @@ function titleCase(sentence) {
   return sentence.join(' ');
 }
 
+//// TIME COMPLEXITY -
+
 test.only('takes sentence and returns same sentence with first letter of each word capitalized', () => {
   const output = titleCase('alchemy ROCKS goLD');
   expect(output).toEqual('Alchemy Rocks Gold');

@@ -26,3 +26,9 @@ describe("titleCase", () => {
     expect(titleCase("alchemy ROCKS goLD")).toBe("Alchemy Rocks Gold");
   });
 });
+
+describe("reverseWords", () => {
+  it("should reverse the words of a sentence", () => {
+    expect(reverseWords("alchemy rocks gold")).toBe("ymehcla skcor dlog");
+  });
+});

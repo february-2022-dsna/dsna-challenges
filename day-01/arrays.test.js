@@ -11,8 +11,20 @@ function unshift(arr, item){
     return arr;
 }
 
-function pop(arr, item){
+function pop(arr){
+    if(arr.length === 0) return null;
+    arr.length = arr.length -1;
+    return arr;
+}
 
+function shift(arr){
+    if (arr.length === 0) return null;
+    arr[0] = null;
+    for(let i = 0; i < arr.length; i++){
+        arr[i] = arr[i + 1];
+    }
+    arr.length = arr.length -1
+    return arr;
 }
 
 function inventoryChecker(inventory, { itemName }){
@@ -37,9 +49,17 @@ test('array unshift', () => {
 
 test('array pop', () => {
     const arr = ['a', 'b', 'c'];
-    const actual = unshift(arr, 'd');
-    expect(actual).toEqual(['d', 'a', 'b', 'c']);
-    expect(actual.length).toBe(4);
+    const actual = pop(arr);
+    expect(actual).toEqual(['a', 'b',]);
+    expect(actual.length).toBe(2);
+});
+
+test('array shift', () => {
+    const arr = ['a', 'b', 'c'];
+    const actual = shift(arr);
+    console.log('actual', actual);
+    expect(actual).toEqual(['b', 'c',]);
+    expect(actual.length).toBe(2);
 });
 
 test('inventory checker', () => {

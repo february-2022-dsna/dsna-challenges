@@ -1,4 +1,4 @@
-// ------------------------------ REVERSE SENTENCE WORDS -----------------
+// ------------------------------ 1 - REVERSE SENTENCE WORDS -----------------
 
 function reverseWords(sentence) {
   return sentence.split('').reverse().join('').split(' ').reverse().join(' ');
@@ -11,7 +11,7 @@ test('reverse each word in a sentence', () => {
   expect(output).toEqual('ymehcla skcor dlog');
 });
 
-// ------------------------------ TITLE CASE -----------------
+// ------------------------------ 2 - TITLE CASE -----------------
 
 function titleCase(sentence) {
   sentence = sentence.toLowerCase().split(' ');
@@ -21,14 +21,14 @@ function titleCase(sentence) {
   return sentence.join(' ');
 }
 
-//// TIME COMPLEXITY - O(n) - searching through string
+// TIME COMPLEXITY - O(n) - searching through string
 
 test('takes sentence and returns same sentence with first letter of each word capitalized', () => {
   const output = titleCase('alchemy ROCKS goLD');
   expect(output).toEqual('Alchemy Rocks Gold');
 });
 
-// ------------------------------ ODDISH/EVENISH -----------------
+// ------------------------------ 2.1 - ODDISH/EVENISH -----------------
 
 function oddishOrEvenish(number) {
   const splitNumbers = number.split('');
@@ -38,6 +38,8 @@ function oddishOrEvenish(number) {
   return sum % 2 === 0 ? 'Evenish' : 'Oddish';
 }
 
+// TIME COMPLEXITY - ?
+
 test.only('is a number oddish(sum of all its digits is odd) or evenish(sum of all its digits is even)', () => {
   const outputOne = oddishOrEvenish('121');
   expect(outputOne).toEqual('Evenish');
@@ -45,7 +47,7 @@ test.only('is a number oddish(sum of all its digits is odd) or evenish(sum of al
   expect(outputTwo).toEqual('Oddish');
 });
 
-// ------------------------------ FIZZBUZZ -----------------
+// ------------------------------ 3 - FIZZBUZZ -----------------
 
 function fizzBuzz(number) {
   const arr = [];
@@ -85,7 +87,7 @@ test('fizzbuzz func', () => {
   ]);
 });
 
-// ------------------------------ ANAGRAM -----------------
+// ------------------------------ 4 - ANAGRAM -----------------
 
 function anagrams(wordOne, wordTwo) {
   const wordOneSorted = wordOne.split('').sort().join('');

@@ -1,4 +1,4 @@
-// ------------------------------ PUSH -----------------
+// ------------------------------ 1 - PUSH -----------------
 
 function push(arr, item) {
   arr[arr.length] = item;
@@ -14,7 +14,7 @@ test('add item to end of array', () => {
   expect(newLength).toBe(4);
 });
 
-// ------------------------------ POP -----------------
+// ------------------------------ 2 - POP -----------------
 
 function pop(arr) {
   const lastItem = arr[arr.length - 1];
@@ -31,7 +31,7 @@ test('remove last item from array, return removed item', () => {
   expect(removedItem).toBe('c');
 });
 
-// ------------------------------ UNSHIFT -----------------
+// ------------------------------ 4 - UNSHIFT -----------------
 
 function unshift(arr, item) {
   for (let i = arr.length; i > 0; i--) {
@@ -50,7 +50,7 @@ test('adjust items in array to make room and add item to beginning of array', ()
   expect(newLength).toBe(4);
 });
 
-// ------------------------------ SHIFT -----------------
+// ------------------------------ 5 - SHIFT -----------------
 
 function shift(arr) {
   const firstItem = arr[0];
@@ -70,7 +70,7 @@ test('removes first item in array, return removed item', () => {
   expect(removedItem).toBe('a');
 });
 
-// ------------------------------ HASDUPLICATES -----------------
+// ------------------------------ 7 - HASDUPLICATES -----------------
 
 function hasDuplicates(arr) {
   for (let i = 0; i < arr.length - 1; i++) {

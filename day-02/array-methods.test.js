@@ -9,7 +9,7 @@ function map(arr, callback) {
   return mapped;
 }
 
-//TIME COMPLEXITY -
+//TIME COMPLEXITY - O(n)
 
 test('maps through an array', () => {
   const arr = [1, 6, 5];
@@ -31,7 +31,7 @@ function filter(arr, predicate) {
   return filtered;
 }
 
-//TIME COMPLEXITY -
+//TIME COMPLEXITY - O(n)
 
 test.only('filters through an array', () => {
   const arr = [2, 6, 5];
@@ -48,7 +48,7 @@ function some(arr, predicate) {
   return false;
 }
 
-//TIME COMPLEXITY -
+//TIME COMPLEXITY - O(n)
 
 test('some', () => {
   const arr = [1, 6, 5];
@@ -69,7 +69,7 @@ function every(arr, predicate) {
   return true;
 }
 
-//TIME COMPLEXITY -
+//TIME COMPLEXITY - O(n)
 
 test('every', () => {
   const arr = [2, 4, 6];
@@ -79,16 +79,4 @@ test('every', () => {
   const secondArr = [1, 2, 3];
   const secondActual = every(secondArr, (n) => n % 2 === 0);
   expect(secondActual).toEqual(false);
-});
-
-// ------------------------------ 5 - ADD PUNCTUATION -----------------
-
-const addPunctuation = (punctuation) => (phrase) => phrase + punctuation;
-
-test.only('add punctuation', () => {
-  const addExcitement = addPunctuation('!!!');
-  expect(addExcitement('Hello World')).toBe('Hello World!!!');
-
-  const addUnsure = addPunctuation('?!?');
-  expect(addUnsure('Hello World')).toBe('Hello World?!?');
 });

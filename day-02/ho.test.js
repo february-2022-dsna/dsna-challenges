@@ -36,7 +36,7 @@ test.skip('addX', () => {
 
 const addPunctuation = (punctuation) => (name) => name + punctuation;
 
-test.skip('addPunctuation', () => {
+test('addPunctuation', () => {
   const addExcitement = addPunctuation('!!!');
   expect(addExcitement('jeff')).toBe('jeff!!!');
   expect(addExcitement('liana')).toBe('liana!!!');

@@ -7,10 +7,12 @@ function rootDigit(n) {
   console.log('numbers', numbers);
   const sum = numbers.reduce((a, b) => a + b);
   console.log('sum', sum);
-  if (numbers.toString().length === 1) {
-    return sum;
-  }
-  return rootDigit(sum);
+
+  return sum.toString().length === 1 ? sum : rootDigit(sum);
+  //   if (numbers.toString().length === 1) {
+  //     return sum;
+  //   }
+  //   return rootDigit(sum);
 }
 
 //TIME COMPLEXITY -

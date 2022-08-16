@@ -168,3 +168,27 @@ test('progressDays', () => {
     expect(actual3).toEqual(expected3);
 
 });
+
+function filter(input){
+    return input.filter(thing => thing % 2 === 0)
+}
+
+test('progressDays', () => {
+
+    const arr = [2, 6, 5];
+    
+    const expected = [2, 6];
+
+    const actual = filter(arr);
+
+    expect(actual).toEqual(expected);
+
+    const arr2 = [16, 31, 40, 157];
+    
+    const expected2 = [16, 40];
+
+    const actual2 = filter(arr2);
+
+    expect(actual2).toEqual(expected2);
+
+});

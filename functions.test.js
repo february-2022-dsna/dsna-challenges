@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -49,4 +49,13 @@ describe("map", () => {
   it("calls the callback function with each element of the passed array and returns a new array with the results of the callback function for each item in the array", () => {
     expect(map([1, 6, 5], n => n**2)).toEqual([1, 36, 25]);
   });
+});
+
+const addExcitement = addPunctuation('!!!');
+const addUnsure = addPunctuation('?!?');
+describe("addPunctuation", () => {
+  it("takes in punctuation and a string and returns the string with the punctuation at the end", () => {
+    expect(addUnsure('Hello World')).toBe('Hello World?!?');
+    expect(addExcitement('Hello World')).toBe('Hello World!!!');
+  })
 });

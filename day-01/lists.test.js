@@ -95,7 +95,7 @@ function anagrams(wordOne, wordTwo) {
   return wordOneSorted === wordTwoSorted ? true : false;
 }
 
-// TIME COMPLEXITY - O(n + m) - ?
+// TIME COMPLEXITY - O(n + m) -
 
 test('returns true if anagram(same letters) or false', () => {
   const outputOne = anagrams('superintended', 'unpredestined');
@@ -118,6 +118,8 @@ function uniqueString(strings) {
   }
 }
 
+//TIME COMPLEXITY - O(n) -
+
 test('unique string', () => {
   const outputOne = uniqueString([
     'Aa',
@@ -139,4 +141,25 @@ test('unique string', () => {
     'cba',
   ]);
   expect(outputTwo).toBe('foo');
+});
+
+// ------------------------------ 5 - UNIQUE CHAR -----------------
+function uniqueChar(string) {
+  for (let i = 0; i < string.length; i++) {
+    if (string.indexOf(string[i]) === string.lastIndexOf(string[i]))
+      return string[i];
+  }
+
+  return '_';
+}
+
+// TIME COMPLEXITY - O(n) -
+
+test.only('returns any instance of non-repeating char. If so, return _', () => {
+  const outputOne = uniqueChar('abdacabad');
+  expect(outputOne).toBe('c');
+  const outputTwo = uniqueChar('abacabaabacaba');
+  expect(outputTwo).toBe('_');
+  const outputThree = uniqueChar('abacabad');
+  expect(outputThree).toBe('c');
 });

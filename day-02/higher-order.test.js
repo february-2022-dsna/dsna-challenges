@@ -1,4 +1,4 @@
-// ------------------------------ 5 - ADD PUNCTUATION -----------------
+// ------------------------------ 1 - ADD PUNCTUATION -----------------
 
 const addPunctuation = (punctuation) => (phrase) => phrase + punctuation;
 
@@ -12,7 +12,7 @@ test('add punctuation', () => {
   expect(addUnsure('Hello World')).toBe('Hello World?!?');
 });
 
-// ------------------------------ 5 - ADD FIRST ELEMENT -----------------
+// ------------------------------ 2 - ADD FIRST ELEMENT -----------------
 
 const addFirst = (element) => (array) => Array(element).concat(array);
 

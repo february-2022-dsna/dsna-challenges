@@ -95,7 +95,7 @@ function anagrams(wordOne, wordTwo) {
   return wordOneSorted === wordTwoSorted ? true : false;
 }
 
-// TIME COMPLEXITY - O(n + m) -
+// TIME COMPLEXITY - O(n log(n)) - .sort method gives us this
 
 test('returns true if anagram(same letters) or false', () => {
   const outputOne = anagrams('superintended', 'unpredestined');

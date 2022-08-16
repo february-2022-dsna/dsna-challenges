@@ -118,7 +118,18 @@ function addPunctuation(punctuation) {
   }
 }
 
+function repeat(txt, n) {
+  //takes in a string and a number
+  //returns a new string with the original string repeated n times
+  let newString = '';
+  for ( let i = 0; i < n; i++ ) {
+    newString += txt;
+  }
+  return newString;
+}
 
 
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation };
+
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat };

@@ -109,6 +109,16 @@ function map(arr, callback) {
   return newArr;
 }
 
+function addPunctuation(punctuation) {
+  //takes in a punctuation string
+  //returns a callback function that takes in a string
+  //returns a new string with the punctuation at the end of the string
+  return function(string) {
+    return string + punctuation;
+  }
+}
 
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map };
+
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation };

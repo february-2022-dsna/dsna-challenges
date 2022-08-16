@@ -32,9 +32,27 @@ function pop(arr) {
   return arr.length;
 }
 
-test('arrays pop', () => {
+test.skip('arrays pop', () => {
   const arr = ['a', 'b', 'c'];
   const newLength = pop(arr, 'c');
   expect(arr).toEqual(['a', 'b']);
   expect(newLength).toBe(2);
+});
+
+function shift(arr) {
+  const number = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i + 1];
+  }
+
+  arr.length = arr.length - 1;
+
+  return number;
+}
+
+test('arrays shift', () => {
+  const arr = ['a', 'b', 'c'];
+  expect(shift(arr)).toBe('a');
+  expect(arr.length).toBe(2);
+  expect(arr).toEqual(['b', 'c']);
 });

@@ -20,15 +20,15 @@ test('maps through an array', () => {
 // ------------------------------ 2 - FILTER -----------------
 
 function filter(arr, predicate) {
-  const mapped = [];
+  const filtered = [];
 
   for (let i = 0; i < arr.length; i++) {
     if (predicate(arr[i])) {
-      mapped.push(arr[i]);
+      filtered.push(arr[i]);
     }
   }
 
-  return mapped;
+  return filtered;
 }
 
 //TIME COMPLEXITY -

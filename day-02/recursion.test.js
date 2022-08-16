@@ -17,7 +17,30 @@ function rootDigit(n) {
 
 //TIME COMPLEXITY - O(n)
 
-test.only('digits sum root', () => {
+test('digits sum root', () => {
   const firstOutput = rootDigit(123);
   expect(firstOutput).toEqual(6);
+});
+
+// ------------------------------ 2 - REPEAT STRING -----------------
+
+function repeat(txt, n) {
+  if (n > 1) {
+    return repeat(txt, n - 1) + txt;
+  }
+
+  return txt;
+}
+
+//TIME COMPLEXITY -
+
+test.only('repeat string', () => {
+  const output1 = repeat('ab', 3);
+  expect(output1).toEqual('ababab');
+
+  const output2 = repeat('kiwi', 1);
+  expect(output2).toEqual('kiwi');
+
+  const output3 = repeat('cherry', 2);
+  expect(output3).toEqual('cherrycherry');
 });

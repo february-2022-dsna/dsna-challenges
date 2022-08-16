@@ -8,6 +8,8 @@ function sumRoot(number) {
   return sumRoot(sum);
 }
 
+// test
+
 test('sumRoot func', () => {
   const expected = 2;
   const actual = sumRoot(4322);

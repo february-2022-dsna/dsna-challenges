@@ -8,7 +8,7 @@ function sumRoot(number) {
   return sumRoot(sum);
 }
 
-// test
+// test 2
 
 test('sumRoot func', () => {
   const expected = 2;

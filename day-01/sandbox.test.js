@@ -62,9 +62,6 @@ test('uniqe string', () => {
 
 function uniqueChar(string) {
     for ( let i = 0; i < string.length; i++ ) {
-        console.log('herewego')
-        console.log(string.indexOf(string[i]))
-        console.log(string.lastIndexOf(string[i]))
         if ( string.indexOf(string[i]) === string.lastIndexOf(string[i]) ) return string[i]
     }
 
@@ -96,4 +93,78 @@ test('uniqe char', () => {
     const actual3 = uniqueChar(letters3);
 
     expect(actual3).toEqual(expected3);
+});
+
+function pluralize(words) {
+    let newWords = [];
+    for ( let i = 0; i < words.length; i++ ) {
+        if (words.indexOf(words[i]) === words.lastIndexOf(words[i])) {newWords.push(words[i])} else newWords.push(words[i] + 's')
+    }
+    return [...new Set(newWords)]
+}
+
+test('pluralize', () => {
+
+    const arr = ["cow", "pig", "cow", "cow"];
+    
+    const expected = ["cows", "pig"];
+
+    const actual = pluralize(arr);
+
+    expect(expected).toEqual(actual);
+
+    const arr2 = ["table", "table", "table"];
+    
+    const expected2 = ["tables"];
+
+    const actual2 = pluralize(arr2);
+
+    expect(expected2).toEqual(actual2);
+
+    const arr3 = ["chair", "pencil", "arm"];
+    
+    const expected3 = ["chair", "pencil", "arm"];
+
+    const actual3 = pluralize(arr3);
+
+    expect(expected3).toEqual(actual3);
+
+});
+
+function progressDays(miles) {
+    let countDays = 0;
+    for ( let i = 0; i < miles.length; i++ ) {
+        if(miles[i + 1] > miles[i]){
+            countDays++
+        }
+    }
+    return countDays;
+}
+
+test('progressDays', () => {
+
+    const arr = [3, 4, 1, 2];
+    
+    const expected = 2;
+
+    const actual = progressDays(arr);
+
+    expect(actual).toEqual(expected);
+
+    const arr2 = [6, 5, 4, 3, 2, 9];
+    
+    const expected2 = 1;
+
+    const actual2 = progressDays(arr2);
+
+    expect(actual2).toEqual(expected2);
+
+    const arr3 = [9, 9];
+    
+    const expected3 = 0;
+
+    const actual3 = progressDays(arr3);
+
+    expect(actual3).toEqual(expected3);
+
 });

@@ -38,3 +38,24 @@ test.only('filters through an array', () => {
   const actual = filter(arr, (n) => n % 2 === 0);
   expect(actual).toEqual([2, 6]);
 });
+
+// ------------------------------ 3 - SOME -----------------
+
+function some(arr, predicate) {
+  for (let i = 0; i < arr.length; i++) {
+    if (predicate(arr[i])) return true;
+  }
+  return false;
+}
+
+//TIME COMPLEXITY -
+
+test.only('some', () => {
+  const arr = [1, 6, 5];
+  const actual = some(arr, (n) => n % 2 === 0);
+  expect(actual).toBe(true);
+
+  const secondArr = [1, 7, 3];
+  const secondActual = some(secondArr, (n) => n % 2 === 0);
+  expect(secondActual).toBe(false);
+});

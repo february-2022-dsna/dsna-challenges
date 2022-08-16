@@ -50,7 +50,7 @@ function some(arr, predicate) {
 
 //TIME COMPLEXITY -
 
-test.only('some', () => {
+test('some', () => {
   const arr = [1, 6, 5];
   const actual = some(arr, (n) => n % 2 === 0);
   expect(actual).toBe(true);
@@ -58,4 +58,25 @@ test.only('some', () => {
   const secondArr = [1, 7, 3];
   const secondActual = some(secondArr, (n) => n % 2 === 0);
   expect(secondActual).toBe(false);
+});
+
+// ------------------------------ 4 - EVERY -----------------
+
+function every(arr, predicate) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!predicate(arr[i])) return false;
+  }
+  return true;
+}
+
+//TIME COMPLEXITY -
+
+test.only('every', () => {
+  const arr = [2, 4, 6];
+  const actual = every(arr, (n) => n % 2 === 0);
+  expect(actual).toEqual(true);
+
+  const secondArr = [1, 2, 3];
+  const secondActual = every(secondArr, (n) => n % 2 === 0);
+  expect(secondActual).toEqual(false);
 });

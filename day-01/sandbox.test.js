@@ -169,26 +169,21 @@ test('progressDays', () => {
 
 });
 
-function filter(input){
-    return input.filter(thing => thing % 2 === 0)
+function filter(arr, predicate) {
+    const filteredArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if(predicate(arr[i])) filteredArr.push(arr[i])
+    }
+
+    return filteredArr
 }
 
 test('progressDays', () => {
-
-    const arr = [2, 6, 5];
     
     const expected = [2, 6];
 
-    const actual = filter(arr);
+    const actual = filter([2, 6, 5], n => n % 2 === 0);
 
     expect(actual).toEqual(expected);
-
-    const arr2 = [16, 31, 40, 157];
-    
-    const expected2 = [16, 40];
-
-    const actual2 = filter(arr2);
-
-    expect(actual2).toEqual(expected2);
 
 });

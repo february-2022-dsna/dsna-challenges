@@ -187,3 +187,22 @@ test('progressDays', () => {
     expect(actual).toEqual(expected);
 
 });
+
+function addPunc(string1, string2) {
+    return string1 + string2
+}
+
+function addExclamation(string){
+    return addPunc(string, '!!!');
+}
+
+
+test('add punctuation', () => {
+    
+    const expected = 'Pokemon, catch em all!!!';
+
+    const actual = addExclamation('Pokemon, catch em all');
+
+    expect(actual).toEqual(expected);
+
+});

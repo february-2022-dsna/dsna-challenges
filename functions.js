@@ -87,5 +87,17 @@ function uniqueChar(string) {
   return '_';
 }
 
+function filter(arr, predicate) {
+  //takes in an array and a callback function
+  //returns a new array with only the items that return true from the callback function
+  const newArr = [];
+  for ( let i = 0; i < arr.length; i++ ) {
+    if ( predicate(arr[i]) ) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar };
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter };

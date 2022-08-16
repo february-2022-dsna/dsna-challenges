@@ -99,5 +99,16 @@ function filter(arr, predicate) {
   return newArr;
 }
 
+function map(arr, callback) {
+  //takes in an array and a callback function
+  //returns a new array with the results of the callback function for each item in the array
+  const newArr = [];
+  for ( let i = 0; i < arr.length; i++ ) {
+    newArr.push(callback(arr[i]));
+  }
+  return newArr;
+}
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter };
+
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map };

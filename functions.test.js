@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -70,5 +70,12 @@ describe("some", () => {
   it("If the callback function returns `true`, the `some` call can short-circuit and return `true`, If every callback function returns `false`, the `some` function returns `false`", () => {
     expect(some([1, 6, 5], n => n % 2 === 0)).toBe(true);
     expect(some([1, 7, 3], n => n % 2 === 0)).toBe(false);
+  });
+});
+
+describe("every", () => {
+  it("If the callback function returns `true`, the `every` call can short-circuit and return `true`, If any callback function returns `false`, the `every` function returns `false`", () => {
+    expect(every([1, 2, 3], n => n % 2 === 0)).toBe(false);
+    expect(every([2, 4, 6], n => n % 2 === 0)).toBe(true);
   });
 });

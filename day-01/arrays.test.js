@@ -68,6 +68,6 @@ function hasDuplicates(arr) {
 }
 
 it('finds duplicate data', () => {
-  expect(hasDuplicates(['j', 'o', 'w', 'w'])).toBe(true);
-  // expect(hasDuplicates(['m', 'b', 'p', 'x'])).toBe(false);
+  const arr = ['j', 'o', 'w', 'w'];
+  expect(hasDuplicates(arr)).toBe(true);
 });

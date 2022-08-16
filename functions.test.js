@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -36,5 +36,11 @@ describe("reverseWords", () => {
 describe("uniqueChar", () => {
   it("should return the odd man out", () => {
     expect(uniqueChar('abdacabad')).toBe('c');
+  });
+});
+
+describe("filter", () => {
+  it("it calls the callback function with each element of the passed array and conditionally adds the item to the new array if the predicate function returns a truthy value", () => {
+    expect(filter([2, 6, 5], n => n % 2 === 0)).toEqual([2, 6]);
   });
 });

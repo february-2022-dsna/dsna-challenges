@@ -71,7 +71,7 @@ function every(arr, predicate) {
 
 //TIME COMPLEXITY -
 
-test.only('every', () => {
+test('every', () => {
   const arr = [2, 4, 6];
   const actual = every(arr, (n) => n % 2 === 0);
   expect(actual).toEqual(true);
@@ -79,4 +79,16 @@ test.only('every', () => {
   const secondArr = [1, 2, 3];
   const secondActual = every(secondArr, (n) => n % 2 === 0);
   expect(secondActual).toEqual(false);
+});
+
+// ------------------------------ 5 - ADD PUNCTUATION -----------------
+
+const addPunctuation = (punctuation) => (phrase) => phrase + punctuation;
+
+test.only('add punctuation', () => {
+  const addExcitement = addPunctuation('!!!');
+  expect(addExcitement('Hello World')).toBe('Hello World!!!');
+
+  const addUnsure = addPunctuation('?!?');
+  expect(addUnsure('Hello World')).toBe('Hello World?!?');
 });

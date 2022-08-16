@@ -16,6 +16,8 @@ test('add punctuation', () => {
 
 const addFirst = (element) => (array) => Array(element).concat(array);
 
+//TIME COMPLEXITY -
+
 test('add first element', () => {
   const addOrange = addFirst('orange');
   expect(addOrange(['red', 'blue', 'green'])).toEqual([

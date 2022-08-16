@@ -36,8 +36,23 @@ test.skip('addX', () => {
 
 const addPunctuation = (punctuation) => (name) => name + punctuation;
 
-test('addPunctuation', () => {
+test.skip('addPunctuation', () => {
   const addExcitement = addPunctuation('!!!');
   expect(addExcitement('jeff')).toBe('jeff!!!');
   expect(addExcitement('liana')).toBe('liana!!!');
+});
+
+function addFirst(element) {
+  return (arr) => {
+    return arr.map((i) => element + i);
+  };
+}
+
+test('adds element to the front of an array', () => {
+  const addOrange = addFirst('orange');
+  console.log(addOrange(['red', 'blue', 'green']));
+  console.log(addOrange(['blue', 'blue', 'blue']));
+  const addCat = addFirst('cat');
+  console.log(addOrange(['dog', 'bird', 'lizard']));
+  console.log(addOrange(['lizard', 'donkey', 'whale']));
 });

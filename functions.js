@@ -128,8 +128,26 @@ function repeat(txt, n) {
   return newString;
 }
 
+function some(arr, predicate) {
+  //takes in an array and a callback function
+  //returns true if any item in the array returns true from the callback function
+  for ( let i = 0; i < arr.length; i++ ) {
+    if ( predicate(arr[i]) ) {
+      return true;
+    }
+  }
+  return false;
+}
 
+function every(arr, predicate) {
+  //takes in an array and a callback function
+  //returns true if all items in the array return true from the callback function
+  for ( let i = 0; i < arr.length; i++ ) {
+    if ( !predicate(arr[i]) ) {
+      return false;
+    }
+  }
+  return true;
+}
 
-
-
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat };
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some };

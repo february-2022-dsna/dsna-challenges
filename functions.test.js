@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString, titleCase } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -30,5 +30,11 @@ describe("titleCase", () => {
 describe("reverseWords", () => {
   it("should reverse the words of a sentence", () => {
     expect(reverseWords("alchemy rocks gold")).toBe("ymehcla skcor dlog");
+  });
+});
+
+describe("uniqueChar", () => {
+  it("should return the odd man out", () => {
+    expect(uniqueChar('abdacabad')).toBe('c');
   });
 });

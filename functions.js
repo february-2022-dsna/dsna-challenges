@@ -70,5 +70,22 @@ function reverseWords(sentence) {
     .join("");
 }
 
+function uniqueChar(string) {
+  //takes in a string
+  //returns the first unique character in the string
+  //if there are no unique characters, return '_'
+  const newString = string
+    .split("")
+    //sort the characters alphabetically
+    .sort()
+    //join the characters back together
+    .join("");
+  for ( let i = 0; i < newString.length; i++ ) {
+    if ( newString.indexOf(newString[i]) === newString.lastIndexOf(newString[i]) )
+    return newString[i]
+  }
+  return '_';
+}
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords };
+
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar };

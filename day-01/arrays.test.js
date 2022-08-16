@@ -56,3 +56,18 @@ test('arrays shift', () => {
   expect(arr.length).toBe(2);
   expect(arr).toEqual(['b', 'c']);
 });
+
+function hasDuplicates(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.i) {
+      return true;
+    } else {
+      arr.i = 1;
+    }
+  }
+}
+
+it('finds duplicate data', () => {
+  expect(hasDuplicates(['j', 'o', 'w', 'w'])).toBe(true);
+  // expect(hasDuplicates(['m', 'b', 'p', 'x'])).toBe(false);
+});

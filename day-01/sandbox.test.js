@@ -188,20 +188,23 @@ test('progressDays', () => {
 
 });
 
-function addPunc(string1, string2) {
-    return string1 + string2
-}
+// function addPunc(string1, string2) {
+//     return string1 + string2
+// }
 
-function addExclamation(string){
-    return addPunc(string, '!!!');
-}
+// function addExclamation(string){
+//     return addPunc(string, '!!!');
+// }
 
+function addPuncuation(punc) {
+    return (string) => string + punc;
+}
 
 test('add punctuation', () => {
-    
+    const addExcite = addPuncuation('!!!')
     const expected = 'Pokemon, catch em all!!!';
 
-    const actual = addExclamation('Pokemon, catch em all');
+    const actual = addExcite('Pokemon, catch em all');
 
     expect(actual).toEqual(expected);
 

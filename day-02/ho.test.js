@@ -1,4 +1,5 @@
 const { expect } = require('expect');
+const { number } = require('yargs');
 
 function filter(arr, predicate) {
   const filtered = [];
@@ -48,11 +49,23 @@ function addFirst(element) {
   };
 }
 
-test('adds element to the front of an array', () => {
+test.skip('adds element to the front of an array', () => {
   const addOrange = addFirst('orange');
   console.log(addOrange(['red', 'blue', 'green']));
   console.log(addOrange(['blue', 'blue', 'blue']));
   const addCat = addFirst('cat');
   console.log(addOrange(['dog', 'bird', 'lizard']));
   console.log(addOrange(['lizard', 'donkey', 'whale']));
+});
+
+function rootDigit(number) {
+  if (number < -9) return number;
+  const digits = number.toString().split('');
+  const numbers = digits.map((d) => +d);
+  const sum = numbers.reduce((a, b) => a + b);
+  return sum >= 10 ? rootDigit(sum) : sum;
+}
+
+test('returns single digit that is the sum of the input digits', () => {
+  expect(rootDigit(4322)).toEqual(2);
 });

@@ -235,8 +235,8 @@ test('repeat string', () => {
 
 
     expect(actual).toEqual(expected);
-    // expect(actual2).toEqual(expected2);
-    // expect(actual3).toEqual(expected3);
+    expect(actual2).toEqual(expected2);
+    expect(actual3).toEqual(expected3);
  
 });
 
@@ -246,3 +246,32 @@ function repeat(txt, n) {
     
     return txt
 }
+
+
+
+function some(arr, predicate) {
+
+    for(let i = 0; i < arr.length; i++) {
+        if(predicate(arr[i]) === true) return true;
+    }
+    
+    return false;
+}
+
+test('some', () => {
+    
+    const expected = true;
+    const actual = some([1, 6, 5], n => n % 2 === 0);
+
+    const expected2= false;
+    const actual2 = some([1, 7, 3], n => n % 2 === 0);
+
+    // const expected3= 'cherrycherry';
+    // const actual3 = repeat('cherry', 2);
+
+
+    expect(actual).toEqual(expected);
+    expect(actual2).toEqual(expected2);
+    // expect(actual3).toEqual(expected3);
+ 
+});

@@ -211,13 +211,6 @@ test('map', () => {
 
 
 
-
-
-
-
-
-
-
 function map(arr, callback) {
 
     let newArr = [];
@@ -229,16 +222,16 @@ function map(arr, callback) {
     return newArr
 }
 
-test('map', () => {
+test('repeat string', () => {
     
-    const expected = [1, 36, 25];
-    const actual = map([1, 6, 5], n => n**2);
+    const expected = 'ababab';
+    const actual = repeat('ab', 3);
 
-    // const expected2= -1;
-    // const actual2 = largestEven([1, 3, 5, 7]);
+    const expected2= 'kiwi';
+    const actual2 = repeat('kiwi', 1);
 
-    // const expected3= 0;
-    // const actual3 = largestEven([0, 19, 18973623]);
+    const expected3= 'cherrycherry';
+    const actual3 = repeat('cherry', 2);
 
 
     expect(actual).toEqual(expected);
@@ -246,3 +239,10 @@ test('map', () => {
     // expect(actual3).toEqual(expected3);
  
 });
+
+function repeat(txt, n) {
+
+    if(n > 1) return repeat(txt, n - 1) + txt;
+    
+    return txt
+}

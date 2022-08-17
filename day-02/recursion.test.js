@@ -8,7 +8,7 @@ function rootDigit(n) {
   const sum = numbers.reduce((a, b) => a + b); // O(n)
   console.log('sum', sum);
 
-  return sum.toString().length === 1 ? sum : rootDigit(sum);
+  return numbers.toString().length === 1 ? sum : rootDigit(sum);
   //   if (numbers.toString().length === 1) {
   //     return sum;
   //   }

@@ -69,3 +69,7 @@ function rootDigit(number) {
 test('returns single digit that is the sum of the input digits', () => {
   expect(rootDigit(4322)).toEqual(2);
 });
+
+function every(arr, predicate) {}
+
+test('', () => {});

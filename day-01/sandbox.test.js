@@ -178,7 +178,7 @@ function filter(arr, predicate) {
     return filteredArr
 }
 
-test('progressDays', () => {
+test('filter', () => {
     
     const expected = [2, 6];
 

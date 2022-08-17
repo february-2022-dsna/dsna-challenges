@@ -135,7 +135,98 @@ function fib(n) {
     F[F.length] = F[F.length - 2] + F[F.length - 1]
     
     return fib(n);
+}
 
-
+test('filter', () => {
     
+    const expected = [2, 6];
+
+    const actual = filter([2, 6, 5], n => n % 2 === 0);
+
+    expect(actual).toEqual(expected);
+
+});
+
+
+
+
+
+function filter(arr, predicate) {
+    const filteredArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if(predicate(arr[i])) filteredArr.push(arr[i])
+    }
+
+    return filteredArr
+}
+
+
+test('largest even', () => {
+    
+    const expected = 10;
+    const actual = largestEven([3, 7, 2, 1, 7, 9, 10, 13]);
+
+    const expected2= -1;
+    const actual2 = largestEven([1, 3, 5, 7]);
+
+    const expected3= 0;
+    const actual3 = largestEven([0, 19, 18973623]);
+
+
+    expect(actual).toEqual(expected);
+    expect(actual2).toEqual(expected2);
+    expect(actual3).toEqual(expected3);
+ 
+});
+
+
+function largestEven(nums) {
+
+    if(nums.length < 1) return -1;
+
+    let num = nums[nums.length - 1]
+
+    if(num % 2 === 0 ){
+        return nums[nums.length - 1]
+    }
+
+    nums.pop()
+
+    return largestEven(nums)
+}
+
+
+
+
+
+test('map', () => {
+    
+    const expected = [1, 36, 25];
+    const actual = map([1, 6, 5], n => n**2);
+
+    // const expected2= -1;
+    // const actual2 = largestEven([1, 3, 5, 7]);
+
+    // const expected3= 0;
+    // const actual3 = largestEven([0, 19, 18973623]);
+
+
+    expect(actual).toEqual(expected);
+    // expect(actual2).toEqual(expected2);
+    // expect(actual3).toEqual(expected3);
+ 
+});
+
+
+
+
+function map(arr, callback) {
+
+    let newArr = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        newArr.push(callback(arr[i]))
+    }
+
+    return newArr
 }

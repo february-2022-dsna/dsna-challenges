@@ -150,4 +150,14 @@ function every(arr, predicate) {
   return true;
 }
 
+function largestEven(nums) {
+  let largestEven = 0;
+  for ( let i = 0; i < nums.length; i++ ) {
+    if ( nums[i] % 2 === 0 && nums[i] > largestEven ) {
+      largestEven = nums[i];
+    }
+  }
+  return largestEven;
+}
+
 module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every };

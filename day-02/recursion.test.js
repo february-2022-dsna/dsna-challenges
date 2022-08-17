@@ -32,7 +32,7 @@ function repeat(txt, n) {
   return txt;
 }
 
-//TIME COMPLEXITY -
+//TIME COMPLEXITY - O(n)
 
 test.only('repeat string', () => {
   const output1 = repeat('ab', 3);

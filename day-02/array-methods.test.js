@@ -48,7 +48,7 @@ function some(arr, predicate) {
   return false;
 }
 
-//TIME COMPLEXITY - O(1) - we are only accessing array and returning true or false?
+//TIME COMPLEXITY - O(1) - we are only accessing array. Not returning the array/making a new array?
 
 test('some', () => {
   const arr = [1, 6, 5];

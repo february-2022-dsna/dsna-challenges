@@ -190,7 +190,7 @@ function largestEven(nums) {
         return nums[nums.length - 1]
     }
 
-    nums.pop()
+    nums.length = nums.length - 1
 
     return largestEven(nums)
 }
@@ -198,6 +198,36 @@ function largestEven(nums) {
 
 
 
+
+test('map', () => {
+    
+    const expected = [1, 36, 25];
+    const actual = map([1, 6, 5], n => n**2);
+
+    expect(actual).toEqual(expected);
+   
+ 
+});
+
+
+
+
+
+
+
+
+
+
+function map(arr, callback) {
+
+    let newArr = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        newArr[i] = callback(arr[i])
+    }
+
+    return newArr
+}
 
 test('map', () => {
     
@@ -216,17 +246,3 @@ test('map', () => {
     // expect(actual3).toEqual(expected3);
  
 });
-
-
-
-
-function map(arr, callback) {
-
-    let newArr = [];
-
-    for(let i = 0; i < arr.length; i++) {
-        newArr.push(callback(arr[i]))
-    }
-
-    return newArr
-}

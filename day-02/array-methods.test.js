@@ -48,7 +48,7 @@ function some(arr, predicate) {
   return false;
 }
 
-//TIME COMPLEXITY - O(n)
+//TIME COMPLEXITY - O(1) - we are only accessing array and returning true or false?
 
 test('some', () => {
   const arr = [1, 6, 5];
@@ -69,7 +69,7 @@ function every(arr, predicate) {
   return true;
 }
 
-//TIME COMPLEXITY - O(n)
+//TIME COMPLEXITY - O(1) -- accessing array only
 
 test('every', () => {
   const arr = [2, 4, 6];

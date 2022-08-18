@@ -52,10 +52,14 @@ class LinkedListNode {
     }
   }
 
+  //TIME COMPLEXITY - O(1) or O(n) - if inserting element to the beginning or end of the list, runtime will be O(1). If inserting element anywhere in the list, runtime will be O(n)
+
   getList() {
     if (!this.next) return this.value;
     return `${this.value} ${this.next.getList()}`;
   }
+
+  //TIME COMPLEXITY - O(n) - searching for any element from the list has a runtime of O(n)
 
   remove(value) {
     if (!this.next) return this.value;
@@ -65,6 +69,8 @@ class LinkedListNode {
       this.next.remove(value);
     }
   }
+
+  //TIME COMPLEXITY - O(1) or O(n) - If removing element from beginning of the list or end of the list, runtime will be O(1). If removing element from beginning, runtime will be O(n)
 }
 
 test('adding node to linked list', () => {

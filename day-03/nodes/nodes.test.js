@@ -37,7 +37,7 @@ test('binary add node', () => {
   expect(B.right).toBe(D);
 });
 
-// ------------------------------ 2 - LINKED LIST -----------------
+// ------------------------------ 2 - LINKED LIST (ADD, GETLIST, REMOVE) -----------------
 
 class LinkedListNode {
   constructor(value) {
@@ -51,9 +51,14 @@ class LinkedListNode {
       this.next.add(node);
     }
   }
+
+  getList() {
+    if (!this.next) return this.value;
+    return `${this.value} ${this.next.getList()}`;
+  }
 }
 
-test.only('adding node to linked list', () => {
+test('adding node to linked list', () => {
   const root = new LinkedListNode('A');
   const nodeB = new LinkedListNode('B');
   const nodeC = new LinkedListNode('C');
@@ -62,4 +67,18 @@ test.only('adding node to linked list', () => {
   root.add(nodeC);
   root.add(nodeD);
   expect(root.next).toBe(nodeB);
+});
+
+test.only('getting list in linked list', () => {
+  const root = new LinkedListNode('A');
+  const nodeB = new LinkedListNode('B');
+  const nodeC = new LinkedListNode('C');
+  const nodeD = new LinkedListNode('D');
+  expect(root.getList()).toBe('A');
+  root.add(nodeB);
+  expect(root.getList()).toBe('A B');
+  root.add(nodeC);
+  expect(root.getList()).toBe('A B C');
+  root.add(nodeD);
+  expect(root.getList()).toBe('A B C D');
 });

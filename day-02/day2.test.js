@@ -222,13 +222,13 @@ function map(arr, callback) {
     return newArr
 }
 
-test('repeat string', () => {
+test.only('repeat string', () => {
     
     const expected = 'ababab';
     const actual = repeat('ab', 3);
 
-    const expected2= 'kiwi';
-    const actual2 = repeat('kiwi', 1);
+    const expected2= 'kiwikiwikiwikiwikiwi';
+    const actual2 = repeat('kiwi', 5);
 
     const expected3= 'cherrycherry';
     const actual3 = repeat('cherry', 2);
@@ -241,7 +241,7 @@ test('repeat string', () => {
 });
 
 function repeat(txt, n) {
-
+  
     if(n > 1) return repeat(txt, n - 1) + txt;
     
     return txt

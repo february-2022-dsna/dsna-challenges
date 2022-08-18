@@ -66,10 +66,10 @@ function rootDigit(number) {
   return sum >= 10 ? rootDigit(sum) : sum;
 }
 
-test('returns single digit that is the sum of the input digits', () => {
+test.skip('returns single digit that is the sum of the input digits', () => {
   expect(rootDigit(4322)).toEqual(2);
 });
 
 function every(arr, predicate) {}
 
-test('', () => {});
+test.skip('', () => {});

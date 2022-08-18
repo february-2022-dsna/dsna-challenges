@@ -61,7 +61,7 @@
     expect(C.left).toBe(null);
   });
 
-  test.only('linked list', () => {
+  test('linked list', () => {
     
     const root = new LinkedListNode('A');
     const nodeB = new LinkedListNode('B');
@@ -74,7 +74,7 @@
     root.add(nodeD);
     root.add(nodeE);
     console.log(root.getList()); // 'A B C D E'
-    // root.remove(1);
+    root.remove(1);
     console.log(root.getList()); // 'A C D E'
 
     expect(root.next).toBe(nodeB);
@@ -96,8 +96,17 @@
       }
     }
 
-    getList(node) {
+    getList() {
         if(!this.next) return this.value;
         return `${this.value} ${this.next.getList()}`;
     }
+
+    remove(value) {
+        if (!this.next) return;
+        if (this.next.value === value) {
+            this.next = this.next.next;
+          } else {
+            this.next.remove(value);
+          }
+        }
 }

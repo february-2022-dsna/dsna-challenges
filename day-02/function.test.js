@@ -49,14 +49,35 @@ test('every test', () => {
 
 // -------------------------------------------------------------------------------------------------------
 
-const fibonacci = (n) => {
-    if (n <=0 )return;
-    
+// const fibonacci = (n) => {
+//     if (n <=0 )return;
+
+// }
+
+// test('fibonacci test', () => {
+
+// })
+
+// -------------------------------------------------------------------------------------------------------
+
+//declarative
+// function largestEven(nums){
+//     return nums.reduce((maxEven, num) => {
+//         return num % 2 === 0 && num > maxEven ? num : maxEven;
+//     }, -1);
+// }
+
+//recursive version
+function largestEven(nums, maxEven = -1){
+    if(!nums.length) return maxEven;
+    const num = nums.pop();
+    if(num % 2 && num > maxEven) maxEven = num;
 }
 
-test('fibonacci test', () => {
-
+test('largestEven test', () => {
+    expect(largestEven([3, 7, 2, 1, 7, 9, 10, 13])).toEqual(10)
 })
+
 // -------------------------------------------------------------------------------------------------------
 
 function map(arr, fn) {

@@ -160,4 +160,140 @@ function largestEven(nums) {
   return largestEven;
 }
 
+class BinaryTreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    if ( node.value < this.value ) {
+      if ( this.left === null ) {
+        this.left = node;
+      } else {
+        this.left.add(node);
+      }
+    } else {
+      if ( this.right === null ) {
+        this.right = node;
+      } else {
+        this.right.add(node);
+      }
+    }
+  }
+}
+
+class PersonTreeNode {
+  constructor(person) {
+    this.value = person.name;
+    this.person = person;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    if ( node.value < this.value ) {
+      if ( this.left === null ) {
+        this.left = node;
+      } else {
+        this.left.add(node);
+      }
+    } else {
+      if ( this.right === null ) {
+        this.right = node;
+      } else {
+        this.right.add(node);
+      }
+    }
+  }
+
+  findPerson(name) {
+    if ( this.value === name ) {
+      return this.person;
+    } else if ( this.value > name ) {
+      if ( this.left === null ) {
+        return null;
+      } else {
+        return this.left.findPerson(name);
+      }
+    } else {
+      if ( this.right === null ) {
+        return null;
+      } else {
+        return this.right.findPerson(name);
+      }
+    }
+  }
+}
+
+const D = {
+  value: 'D',
+  children: []
+};
+
+const B = {
+  value: 'B',
+  children: [D]
+};
+
+const C = {
+  value: 'C',
+  children: []
+};
+
+const F = {
+  value: 'F',
+  children: []
+};
+
+const E = {
+  value: 'E',
+  children: [F]
+};
+
+const A = {
+  value: 'A',
+  children: [B, C, E]
+};
+
+function traverse(node) {
+  if ( node.children.length > 0 ) {
+    for ( let i = 0; i < node.children.length; i++ ) {
+      traverse(node.children[i]);
+    }
+  }
+  console.log(node.value);
+}
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+  add(node) {
+    if ( this.next === null ) {
+      this.next = node;
+    } else {
+      this.next.add(node);
+    }
+  }
+  getList() {
+    let list = [];
+    let current = this;
+    while ( current !== null ) {
+      list.push(current.value);
+      current = current.next;
+    }
+    return list;
+  }
+  remove(node) {
+    if ( this.next === node ) {
+      this.next = this.next.next;
+    } else {
+      this.next.remove(node);
+    }
+  }
+}
+
 module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every };

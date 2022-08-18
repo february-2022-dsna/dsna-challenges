@@ -56,6 +56,15 @@ class LinkedListNode {
     if (!this.next) return this.value;
     return `${this.value} ${this.next.getList()}`;
   }
+
+  remove(value) {
+    if (!this.next) return this.value;
+    if (this.next.value === value) {
+      this.next = this.next.next;
+    } else {
+      this.next.remove(value);
+    }
+  }
 }
 
 test('adding node to linked list', () => {
@@ -69,7 +78,7 @@ test('adding node to linked list', () => {
   expect(root.next).toBe(nodeB);
 });
 
-test.only('getting list in linked list', () => {
+test('getting list in linked list', () => {
   const root = new LinkedListNode('A');
   const nodeB = new LinkedListNode('B');
   const nodeC = new LinkedListNode('C');
@@ -81,4 +90,16 @@ test.only('getting list in linked list', () => {
   expect(root.getList()).toBe('A B C');
   root.add(nodeD);
   expect(root.getList()).toBe('A B C D');
+});
+
+test.only('removing from linked list', () => {
+  const root = new LinkedListNode('A');
+  const nodeB = new LinkedListNode('B');
+  const nodeC = new LinkedListNode('C');
+  const nodeD = new LinkedListNode('D');
+  root.add(nodeB);
+  root.add(nodeC);
+  root.add(nodeD);
+  root.remove('C');
+  expect(root.getList()).toBe('A B D');
 });

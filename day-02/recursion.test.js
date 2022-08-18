@@ -63,7 +63,7 @@ function largestEven(nums, maxEven = -1) {
 
 //TIME COMPLEXITY -
 
-test.only('largest even', () => {
+test('largest even', () => {
   expect(largestEven([3, 7, 2, 1, 7, 9, 10, 13])).toBe(10);
   expect(largestEven([1, 3, 5, 7])).toBe(-1);
   expect(largestEven([0, 19, 18973623])).toBe(0);

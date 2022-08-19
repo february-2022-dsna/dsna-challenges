@@ -57,6 +57,19 @@ test('oddish or evenish test', () => {
 
 // ----------------------------------------------------------------------------------------------
 
+function at(arr, index){
+  if(index < 0) index = arr.length + index;
+  return arr[index];
+}
+
+test('at test' , () => {
+  expect(at(['a', 'b', 'c', 'd', 'e'], 1)).toEqual('b');
+  expect(at(['a', 'b', 'c', 'd', 'e'], -2)).toEqual('d');
+  expect(at(['apple', 'grapes', 'grapefruit', 'kumquat', 'guava'], -4)).toEqual('grapes');
+})
+
+// ----------------------------------------------------------------------------------------------
+
 function fizzBuzz(n){
     const fizzBuzzArr = Array.from({ length: n }, (_, i) => i + 1); 
   for(let i = 1; i < fizzBuzzArr.length; i++){
@@ -78,3 +91,37 @@ test('fizzBuzz', () => {
 });
 
 // ----------------------------------------------------------------------------------------------
+
+function anagrams(first, second){
+  const compare = (word) => word.split('').sort().join('');
+  return compare(first) === compare(second) ? true : false;
+}
+
+test('anagrams test', () => {
+  expect(anagrams('superintended', 'unpredestined')).toEqual(true);
+  expect(anagrams('pictorialness', 'documentarily')).toEqual(false);
+})
+
+// ----------------------------------------------------------------------------------------------
+
+function uniqueString(array){
+const lowerCase = array.map(arr => arr.toLowerCase());
+
+const dedup = lowerCase.map((string) => [...new Set(string.toLowerCase())].sort().join(''));
+
+const sort = dedup.sort();
+
+const find = sort[0] !== sort[1] ? sort[0] : sort[sort.length - 1];
+
+const index = lowerCase.findIndex((s) => s.includes(find));
+
+return array[index];
+}
+
+test('unique String test', () => {
+  expect(uniqueString([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])).toEqual('BbBb');
+  expect(uniqueString([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])).toEqual('foo');
+})
+
+// ----------------------------------------------------------------------------------------------
+

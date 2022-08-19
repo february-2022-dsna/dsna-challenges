@@ -1,4 +1,4 @@
-const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every, BinaryTreeNode } = require('./functions.js'); 
+const { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every, BinaryTreeNode, LinkedListNode } = require('./functions.js'); 
 
 describe("anagrams", () => {
   it("should return true if the words share the same letters", () => {
@@ -96,4 +96,19 @@ test('binary tree', () => {
   expect(B.right).toBe(D);
   expect(A.left).toBe(null);
   expect(C.left).toBe(null);
+});
+
+test('linked list adds', () => {
+  const root = new LinkedListNode('A');
+  const nodeB = new LinkedListNode('B');
+  const nodeC = new LinkedListNode('C');
+  const nodeD = new LinkedListNode('D');
+  root.add(nodeB);
+  root.add(nodeC);
+  root.add(nodeD);
+
+  expect(root.next).toBe(nodeB);
+  expect(nodeB.next).toBe(nodeC);
+  expect(nodeC.next).toBe(nodeD);
+  expect(nodeD.next).toBe(null);
 });

@@ -296,4 +296,4 @@ class LinkedListNode {
   }
 }
 
-module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every, BinaryTreeNode };
+module.exports = { anagrams, oddishOrEvenish, uniqueString, titleCase, reverseWords, uniqueChar, filter, map, addPunctuation, repeat, some, every, BinaryTreeNode, LinkedListNode };

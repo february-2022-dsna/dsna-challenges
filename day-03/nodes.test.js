@@ -41,25 +41,6 @@ test.skip('binary tree adds', () => {
   B.add(3);
 });
 
-class PersonTreeNode {
-  constructor(person) {
-    this.value = person.name;
-    this.person = person;
-    this.left = null;
-    this.right = null;
-  }
-
-  add(node) {
-    // implemented as in previous challenge
-  }
-
-  findPerson(name) {
-    // Implement me!
-  }
-}
-
-test.skip('person tree node add and find', () => {});
-
 class LinkedListNode {
   constructor(value) {
     this.value = value;
@@ -130,3 +111,22 @@ test('linkedList remove', () => {
   root.remove('D');
   expect(root.getList()).toBe('A B C E');
 });
+
+class PersonTreeNode {
+  constructor(person) {
+    this.value = person.name;
+    this.person = person;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    // implemented as in previous challenge
+  }
+
+  findPerson(name) {
+    // Implement me!
+  }
+}
+
+test.skip('person tree node add and find', () => {});

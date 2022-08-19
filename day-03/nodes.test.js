@@ -31,7 +31,7 @@ class BinaryTreeNode {
   }
 }
 
-test('binary tree adds', () => {
+test.skip('binary tree adds', () => {
   const B = new BinaryTreeNode('2');
   const A = new BinaryTreeNode('1');
   const C = new BinaryTreeNode('3');
@@ -39,4 +39,49 @@ test('binary tree adds', () => {
   B.add(1);
   B.add(4);
   B.add(3);
+});
+
+class PersonTreeNode {
+  constructor(person) {
+    this.value = person.name;
+    this.person = person;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    // implemented as in previous challenge
+  }
+
+  findPerson(name) {
+    // Implement me!
+  }
+}
+
+test.skip('person tree node add and find', () => {});
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+
+  add(node) {
+    if (!this.next) this.next = node;
+    else {
+      this.next.add(node);
+    }
+  }
+}
+
+test('linkedList add', () => {
+  const root = new LinkedListNode('A');
+  const nodeB = new LinkedListNode('B');
+  const nodeC = new LinkedListNode('C');
+  const nodeD = new LinkedListNode('D');
+  const nodeE = new LinkedListNode('E');
+  root.add(nodeB);
+  root.add(nodeC);
+  root.add(nodeD);
+  root.add(nodeE);
 });

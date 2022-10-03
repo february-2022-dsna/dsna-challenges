@@ -1,20 +1,20 @@
 # Real Take Home Challenges
 
-Create a function that checks if a gameboard for the boardgame "connect 4" is a winning game board.
+- Create a function that checks if a gameboard for the boardgame "connect 4" is a winning game board.
 
-Code a function to flatten an array into one single array no matter how many array it may contain, for example [1,2,3[4,5]] becomes [1,2,3,4,5] or [1,[2],[3,[4,5]]] becomes [1,2,3,4,5]
+- Code a function to flatten an array into one single array no matter how many array it may contain, for example [1,2,3[4,5]] becomes [1,2,3,4,5] or [1,[2],[3,[4,5]]] becomes [1,2,3,4,5]
 
-take an array of arrays where each array has 2 data points ex. [[data, data],[data,data]] and turn it into an object where the 1st data point of each array is the key and the 2nd data point is the value within the object. 2. a take home exam with an already pre-coded function that returns 1-3 at random. within an react app code a stop light that 1. changes color at random using the function 2. has a switch so you can switch between random mode and a mode where the colors change in order.
+- take an array of arrays where each array has 2 data points ex. [[data, data],[data,data]] and turn it into an object where the 1st data point of each array is the key and the 2nd data point is the value within the object. 2. a take home exam with an already pre-coded function that returns 1-3 at random. within an react app code a stop light that 1. changes color at random using the function 2. has a switch so you can switch between random mode and a mode where the colors change in order.
 
-The code challenge was to build an app, using React, that would call an API, any API, and interact with it in some way. The app should be styled using styled-components and be responsive, time permitting.
+- The code challenge was to build an app, using React, that would call an API, any API, and interact with it in some way. The app should be styled using styled-components and be responsive, time permitting.
 
-Write a function that takes an array and two letters, and returns true if the two letters appear in the array at least once.
+- Write a function that takes an array and two letters, and returns true if the two letters appear in the array at least once.
 
-[React Kata](https://gist.github.com/sanvean74/95d72e9f984dc80a68f270cffe3d73ee)
+- [React Kata](https://gist.github.com/sanvean74/95d72e9f984dc80a68f270cffe3d73ee)
 
-Create a React app with an input - when a user submits a username, make a call to GitHub's API and save a list of user data in a Firebase table. Display the table below the search input, adding to it as more searches are added. (Example solution from Alumni: Completed in TypeScript. https://github.com/devon-wolf/user-saver)
+- Create a React app with an input - when a user submits a username, make a call to GitHub's API and save a list of user data in a Firebase table. Display the table below the search input, adding to it as more searches are added. (Example solution from Alumni: Completed in TypeScript. https://github.com/devon-wolf/user-saver)
 
-[React App Takehome](https://codesandbox.io/s/apprenticeship-takehome-wb5n9)
+- [React App Takehome](https://codesandbox.io/s/apprenticeship-takehome-wb5n9)
 
 ## Image Processor
 
